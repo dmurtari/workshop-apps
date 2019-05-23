@@ -2,13 +2,252 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "",
-  "projects": {},
+  "projects": {
+    "rxjs-operators": {
+      "root": "apps/rxjs-operators/",
+      "sourceRoot": "apps/rxjs-operators/src",
+      "projectType": "application",
+      "prefix": "workshop-demo",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/rxjs-operators",
+            "index": "apps/rxjs-operators/src/index.html",
+            "main": "apps/rxjs-operators/src/main.ts",
+            "polyfills": "apps/rxjs-operators/src/polyfills.ts",
+            "tsConfig": "apps/rxjs-operators/tsconfig.app.json",
+            "assets": [
+              "apps/rxjs-operators/src/favicon.ico",
+              "apps/rxjs-operators/src/assets"
+            ],
+            "styles": [
+              "apps/rxjs-operators/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/rxjs-operators/src/environments/environment.ts",
+                  "with": "apps/rxjs-operators/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "rxjs-operators:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "rxjs-operators:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "rxjs-operators:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/rxjs-operators/src/test.ts",
+            "polyfills": "apps/rxjs-operators/src/polyfills.ts",
+            "tsConfig": "apps/rxjs-operators/tsconfig.spec.json",
+            "karmaConfig": "apps/rxjs-operators/karma.conf.js",
+            "styles": [
+              "apps/rxjs-operators/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/rxjs-operators/src/favicon.ico",
+              "apps/rxjs-operators/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/rxjs-operators/tsconfig.app.json",
+              "apps/rxjs-operators/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "rxjs-operators-e2e": {
+      "root": "apps/rxjs-operators-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/rxjs-operators-e2e/protractor.conf.js",
+            "devServerTarget": "rxjs-operators:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "rxjs-operators:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/rxjs-operators-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "elements": {
+      "root": "apps/elements/",
+      "sourceRoot": "apps/elements/src",
+      "projectType": "application",
+      "prefix": "workshop-demo",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/elements",
+            "index": "apps/elements/src/index.html",
+            "main": "apps/elements/src/main.ts",
+            "polyfills": "apps/elements/src/polyfills.ts",
+            "tsConfig": "apps/elements/tsconfig.app.json",
+            "assets": [
+              "apps/elements/src/favicon.ico",
+              "apps/elements/src/assets"
+            ],
+            "styles": [
+              "apps/elements/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/elements/src/environments/environment.ts",
+                  "with": "apps/elements/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "elements:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "elements:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "elements:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "apps/elements/src/test.ts",
+            "polyfills": "apps/elements/src/polyfills.ts",
+            "tsConfig": "apps/elements/tsconfig.spec.json",
+            "karmaConfig": "apps/elements/karma.conf.js",
+            "styles": [
+              "apps/elements/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "apps/elements/src/favicon.ico",
+              "apps/elements/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/elements/tsconfig.app.json",
+              "apps/elements/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "elements-e2e": {
+      "root": "apps/elements-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "apps/elements-e2e/protractor.conf.js",
+            "devServerTarget": "elements:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "elements:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "apps/elements-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
   "cli": {
     "warnings": {
       "typescriptMismatch": false,
       "versionMismatch": false
     },
     "defaultCollection": "@nrwl/schematics"
-    
-  }
+  },
+  "defaultProject": "rxjs-operators"
 }
