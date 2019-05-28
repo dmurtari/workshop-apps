@@ -1,15 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
     selector: 'pt-card',
     templateUrl: './card.component.html',
-    styleUrls: ['./card.component.css']
+    styleUrls: ['./card.component.scss'],
+    encapsulation: ViewEncapsulation.ShadowDom
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
+
+    @Input() public title: string;
 
     constructor() { }
-
-    ngOnInit() {
-    }
-
 }
