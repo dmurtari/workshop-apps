@@ -1,26 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { createCustomElement } from '@angular/elements';
 
 import { AppComponent } from './app.component';
 import { NxModule } from '@nrwl/nx';
-import { CardModule } from './card/card.module';
-import { HomeModule } from './home/home.module';
-import { appRoutes } from './app.routing';
+import { CardComponent } from 'apps/elements/src/app/card/card.component';
 
 @NgModule({
     declarations: [
-        AppComponent
+        CardComponent
     ],
     imports: [
-        appRoutes,
         BrowserModule,
         NxModule.forRoot(),
-        CardModule,
-        HomeModule
     ],
     providers: [],
-    bootstrap: [
-        AppComponent
+    bootstrap: [],
+    entryComponents: [
+        CardComponent
     ]
 })
-export class AppModule { }
+export class AppModule {
+    constructor(
+        private injector: Injector
+    ) { }
+
+    ngDoBootstrap(): void {
+        const CardElement = createCustomElement(CardComponent, { injector: this.injector });
+        customElements.define('pt-card', CardElement);
+    }
+}
