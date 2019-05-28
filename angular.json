@@ -7,8 +7,15 @@
       "root": "apps/rxjs-operators/",
       "sourceRoot": "apps/rxjs-operators/src",
       "projectType": "application",
-      "prefix": "workshop-demo",
-      "schematics": {},
+      "prefix": "pt",
+      "schematics": {
+        "@schematics/angular:component": {
+          "lintFix": true,
+          "style": "scss",
+          "styleext": "scss",
+          "prefix": "pt"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -126,8 +133,15 @@
       "root": "apps/elements/",
       "sourceRoot": "apps/elements/src",
       "projectType": "application",
-      "prefix": "workshop-demo",
-      "schematics": {},
+      "prefix": "pt",
+      "schematics": {
+        "@schematics/angular:component": {
+          "lintFix": true,
+          "style": "scss",
+          "styleext": "scss",
+          "prefix": "pt"
+        }
+      },
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
