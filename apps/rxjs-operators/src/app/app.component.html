@@ -1,0 +1,5 @@
+<div *ngIf="cat$ | async as catFact">
+    <h3>Did you know?</h3>
+    <p>{{ catFact.fact }}</p>
+</div>
+<button (click)="getNewFact()">Unsubscribe</button>
