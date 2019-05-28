@@ -8,6 +8,8 @@ module.exports = function(config) {
   const baseConfig = getBaseKarmaConfig();
   config.set({
     ...baseConfig,
+    singleRun: false,
+    autoWatch: true,
     coverageIstanbulReporter: {
       ...baseConfig.coverageIstanbulReporter,
       dir: join(__dirname, '../../coverage/apps/rxjs-operators')
