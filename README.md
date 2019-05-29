@@ -1,4 +1,15 @@
-# WorkshopDemo
+# Workshop Demo
+
+## Angular Elements
+* Angular Documentation: https://angular.io/guide/elements
+* Web Components: https://developer.mozilla.org/en-US/docs/Web/Web_Components
+* ng-Conf Talk: https://www.youtube.com/watch?v=_QU0mpyF7bQ
+
+## RxJS Operators
+* ng-Conf Talk: https://www.youtube.com/watch?v=E6R_1QB8q4o&t=1008s
+* RxJS Operator Decision Tree: https://rxjs.dev/operator-decision-treep
+
+## Generic Boilerplate
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) using [Nrwl Nx](https://nrwl.io/nx).
 
